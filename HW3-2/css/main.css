@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.background {
+  width: 100%;
+  height: 810px;
+  background: rgba(46,66,111,1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.underline {
+  width: 915px;
+  height: 25px;
+  background: rgba(73,105,175,1);
+  position: absolute;
+  top: 141px;
+  left: 263px;
+  overflow: hidden;
+}
+.quote {
+  width: 916px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 102px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold Italic;
+  font-size: 48px;
+  text-align: center;
+}
+/* 열 레이아웃 스타일 */
+.thought {
+  width: 100%;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 223px;
+  left: 123px;
+  font-family: Poppins;
+  font-weight: Regular;
+  font-size: 18px;
+  text-align: left;
+  display: flex; /* flexbox를 사용하여 열 레이아웃 설정 */
+  justify-content: center; /* 열을 가로로 중앙 정렬 */
+}
+/* 각 열 스타일 */
+.column {
+   flex-basis: 50%; /* 열의 너비를 동일하게 설정 */
+   margin-right: 20px; /* 열 간 여백 */
+   text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+/* 마지막 열에 오른쪽 여백 추가 방지 */
+.column:last-child {
+   margin-right: 0;
+}
+.back {
+  width: 184px;
+  color: rgba(155,184,208,1);
+  position: absolute;
+  top: 61px;
+  left: 123px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 27px;
+  text-align: left;
+}
+.back a {
+  text-decoration: none;
+  color: inherit; 
+}

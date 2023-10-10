@@ -64,15 +64,24 @@ body {
 .SP {
   width: 50%;
   height: 13vh;
-  background: url("../images/SP.png");
+  /* background: url("../images/SP.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: cover; */
   opacity: 1;
   position: absolute;
   top: 15%;
   left: 25%;
   overflow: hidden;
+}
+.SP h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: Poppins;
+  font-weight: 700;
+}
+.swan {
+  color: #999177
 }
 
 
