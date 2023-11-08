@@ -8,7 +8,6 @@ body {
   width: 100%;
   height: 810px;
   background: rgba(46,66,111,1);
-  position: absolute;
   top: 0px;
   left: 0px;
   overflow: hidden;
@@ -17,27 +16,22 @@ body {
   width: 915px;
   height: 25px;
   background: rgba(73,105,175,1);
-  position: absolute;
   top: 141px;
   left: 263px;
   overflow: hidden;
 }
 .quote {
-  width: 916px;
   color: rgba(255,255,255,1);
-  position: absolute;
-  top: 102px;
-  left: 263px;
   font-family: Poppins;
   font-weight: Bold Italic;
   font-size: 48px;
   text-align: center;
+  padding: 20px 0;
 }
 /* 열 레이아웃 스타일 */
 .thought {
   width: 100%;
   color: rgba(255,255,255,1);
-  position: absolute;
   top: 223px;
   left: 123px;
   font-family: Poppins;
@@ -49,7 +43,8 @@ body {
 }
 /* 각 열 스타일 */
 .column {
-   flex-basis: 50%; /* 열의 너비를 동일하게 설정 */
+   /* flex-basis: 50%; 열의 너비를 동일하게 설정 */
+   flex: 1;
    margin-right: 20px; /* 열 간 여백 */
    text-align: left; /* 텍스트 왼쪽 정렬 */
 }
