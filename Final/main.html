@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="leftPanel">
+        <div id="canvasContainer">
+            <canvas id="canvas" onclick="document.getElementById('imageUploader').click()"></canvas>
+            <div id="selectImageText">Select Image</div>
+        </div>
+        <input type="file" id="imageUploader" accept="image/*" hidden>
+    </div>
+    <div id="rightPanel">
+        <h1 id="title">Pixel Art Converter</h1>
+        <div id="imageName" class="poppins"></div>
+        <label for="pixelSize" class="poppins">Pixel Size:</label>
+        <button id="decreasePixelSize">-10</button>
+        <input type="number" id="pixelSize" value="10" min="1" max="100">
+        <button id="increasePixelSize">+10</button><br>
+        <button id="convertButton">Convert to Pixel Art</button><br>
+        <button id="downloadButton">Download Pixel Art</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

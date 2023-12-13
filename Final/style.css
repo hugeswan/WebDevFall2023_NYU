@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Pixer';
+    src: url('path/to/pixer-font.woff');
+}
+
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Pixer', monospace;
+    font-size: 54px;
+}
+
+button, input[type="number"] {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #999;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 260px;
+    margin: 10px 10px;
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #666;
+}
+
+#leftPanel, #rightPanel {
+    width: 50%;
+    text-align: center;
+}
+
+#canvasContainer {
+    position: relative;
+    display: inline-block;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#selectImageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 54px;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+button, #fileInputLabel {
+    background-color: #999;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 260px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="number"] {
+    margin: 10px 5px;
+    font-family: 'Poppins', sans-serif;
+    width: 60px;
+    border: 1px solid #ddd;
+}
+
+#decreasePixelSize, #increasePixelSize {
+    padding: 10px 15px;
+    width: auto;
+    margin: 10px 2px;
+}
+
+#imageName {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
