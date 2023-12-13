@@ -66,84 +66,16 @@ The `script.js` file handles the dynamic functionality of the page. When an imag
 
     function loadImage(file) {
         // FileReader and Image objects are used to load the image
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const img = new Image();
-            img.onload = function () {
-                const canvas = document.getElementById('canvas');
-                const ctx = canvas.getContext('2d');
-
-                const maxCanvasWidth = 500;
-                const maxCanvasHeight = 500;
-
-                const ratio = img.width / img.height;
-                var canvasWidth;
-                var canvasHeight;
-                if (img.width > img.height){
-                    canvasWidth = maxCanvasWidth;
-                    canvasHeight = maxCanvasWidth / ratio;
-                } else {
-                    canvasHeight = maxCanvasHeight;
-                    canvasWidth = maxCanvasHeight * ratio;
-                }
-                canvas.width = canvasWidth;
-                canvas.height = canvasHeight;
-
-                ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-            };
-            img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
+        ...   
     }
 
 The `convertToPixel Art` function is responsible for turning the image into pixel art.
 
     function convertToPixelArt() {
         // Draw the image on the canvas and create pixel art based on pixel size
-        const input = document.getElementById('imageUploader');
-        const pixelSizeInput = document.getElementById('pixelSize');
-        const pixelSize = parseInt(pixelSizeInput.value) || 10;
-
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const img = new Image();
-                img.onload = function () {
-                    const canvas = document.getElementById('canvas');
-                    const ctx = canvas.getContext('2d');
-
-                    const scaleFactor = Math.min(1, 600 / img.width, 450 / img.height);
-                    const scaledWidth = img.width * scaleFactor;
-                    const scaledHeight = img.height * scaleFactor;
-
-                    canvas.width = scaledWidth;
-                    canvas.height = scaledHeight;
-
-                    ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
-
-                    for (let y = 0; y < scaledHeight; y += pixelSize) {
-                        for (let x = 0; x < scaledWidth; x += pixelSize) {
-                            const pixel = ctx.getImageData(x, y, 1, 1).data;
-                            ctx.fillStyle = `rgba(${pixel[0]}, ${pixel[1]}, ${pixel[2]}, ${pixel[3] / 255})`;
-                            ctx.fillRect(x, y, pixelSize, pixelSize);
-                        }
-                    }
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
+        ...
     }
 
-The `adjustPixelSize` function allows users to change the pixel size.
-
-    function adjustPixelSize(delta) {
-        // Adjust pixel size and immediately reflect pixel art conversion
-        const pixelSizeInput = document.getElementById('pixelSize');
-        let pixelSize = parseInt(pixelSizeInput.value) || 10;
-        pixelSize = Math.max(1, pixelSize + delta);
-        pixelSizeInput.value = pixelSize;
-    }
 
 ### Image Aspect Ratio
 
@@ -186,7 +118,39 @@ The convertToPixelArt function is triggered when the "Convert to Pixel Art" butt
 
     function convertToPixelArt() {
         // Convert the uploaded image into pixel art by redrawing it with larger pixels
-        ...
+        const input = document.getElementById('imageUploader');
+        const pixelSizeInput = document.getElementById('pixelSize');
+        const pixelSize = parseInt(pixelSizeInput.value) || 10;
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    const canvas = document.getElementById('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    const scaleFactor = Math.min(1, 600 / img.width, 450 / img.height);
+                    const scaledWidth = img.width * scaleFactor;
+                    const scaledHeight = img.height * scaleFactor;
+
+                    canvas.width = scaledWidth;
+                    canvas.height = scaledHeight;
+
+                    ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+
+                    for (let y = 0; y < scaledHeight; y += pixelSize) {
+                        for (let x = 0; x < scaledWidth; x += pixelSize) {
+                            const pixel = ctx.getImageData(x, y, 1, 1).data;
+                            ctx.fillStyle = `rgba(${pixel[0]}, ${pixel[1]}, ${pixel[2]}, ${pixel[3] / 255})`;
+                            ctx.fillRect(x, y, pixelSize, pixelSize);
+                        }
+                    }
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
     }
 
 ### Maintaining Image Aspect Ratio
