@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Pixel Art Converter</h1>
+    <input type="file" id="imageUploader" accept="image/*">
+    <br>
+    <label for="pixelSize">Pixel Size:</label>
+    <input type="number" id="pixelSize" value="10" min="1" max="100">
+    <br>
+    <button id="convertButton">Convert to Pixel Art</button>
+    <canvas id="canvas"></canvas>
+    <button id="downloadButton">Download Pixel Art</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
