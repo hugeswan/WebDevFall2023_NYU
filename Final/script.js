@@ -88,7 +88,6 @@ function convertToPixelArt() {
                 const canvas = document.getElementById('canvas');
                 const ctx = canvas.getContext('2d');
 
-                // 이미지 크기 조정
                 const scaleFactor = Math.min(1, 600 / img.width, 450 / img.height);
                 const scaledWidth = img.width * scaleFactor;
                 const scaledHeight = img.height * scaleFactor;
